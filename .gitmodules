@@ -1,0 +1,3 @@
+[submodule "pico-input/firmware/lib/can2040"]
+	path = pico-input/firmware/lib/can2040
+	url = https://github.com/KevinOConnor/can2040
