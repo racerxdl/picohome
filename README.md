@@ -9,7 +9,7 @@ This project is a improvement over my older home automation projects such as [es
 This project consists of few parts:
 
 * [picohome-input](/pico-input/README.md) => Board with opto-coupled inputs which works from 12V to 24V switches.
-* `picohome-relay` => Board that fits on cheap chinese 16 relay board
+* [picohome-relay](/pico-relay/README.md) => Board that fits on cheap chinese 16 relay board
 
 The main idea is to be able to put everything inside a metal box and forget about it. So far I'm still iterating over designs (I'm running my own home automation for a few years already) and trying to make it less dependent of computers and such.
 
