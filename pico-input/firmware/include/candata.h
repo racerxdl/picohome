@@ -10,8 +10,7 @@
 #define CAN_HC_ID 0x11
 #define CAN_RESET_ID 0xFF
 
-// TODO: Change me
-#define MYID 0
+uint8_t MyID();
 
 void initCANData();
 bool getMessageToSend(can2040_msg *data);

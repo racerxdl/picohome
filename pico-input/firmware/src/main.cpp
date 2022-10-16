@@ -11,13 +11,14 @@ extern "C" {
 
 can2040 cbus;
 queue_t rxMsgQueue;
-uint8_t myId = MYID;
+static uint8_t myId = 0;
 
 static void can2040_cb(can2040 *cd, uint32_t notify, can2040_msg *msg) {
     if (notify == CAN2040_NOTIFY_RX) {
         if (msg->id & CAN_MANDATORY) {
             if (!queue_try_add(&rxMsgQueue, msg)) {
                 Serial.println("( ERR) CAN RX FIFO OVF");
+                setError();
             }
         }
     }
@@ -54,6 +55,8 @@ void setup() {
     Serial.println("( ALL) Setting up CAN");
     canbus_setup();
     initGPIO();
+    myId = getAddr();
+    Serial.printf("( ALL) MyID: %d\n", myId);
     Serial.println("( ALL) Started");
 }
 
@@ -110,6 +113,7 @@ void loop1() {
                 break;
             default:
                 Serial.printf("( ERR) Unknown message ID: %08x\r\n", rxMsg.id);
+                setError();
         }
     }
 
