@@ -15,6 +15,7 @@ The main idea is to be able to put everything inside a metal box and forget abou
 
 Work-in-progress = More details to come.
 
+Universal firmware: https://github.com/racerxdl/piho
 
 # LICENSE WARNING
 
